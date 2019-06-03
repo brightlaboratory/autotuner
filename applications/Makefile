@@ -1,8 +1,11 @@
 FILE=covcol.ptile.PRO.c
 
-a.out:
-	icc -I ../PRO -qopenmp -O3 -lm covcol.ptile.PRO.c ../PRO/PRO.c
+PRO:
+	icc -I ../PRO -qopenmp -O3 -lm covcol.ptile.PRO.c ../PRO/PRO.c -o PRO
 
+PRO_util:
+	icc -I ../PRO -qopenmp -O3 -lm covcol.PRO_util.c ../PRO/PRO.c -o PRO_util
 
 clean:
-	rm a.out
+	rm PRO
+	rm PRO_util
