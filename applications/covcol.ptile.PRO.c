@@ -70,9 +70,16 @@ int main(int argc, char** argv)
 
 	float T1c1, T1c2, T1c3;
 
-	T1c1 = atoi(argv[1]);
-	T1c2 = atoi(argv[2]);
-	T1c3 = atoi(argv[3]);
+	if (argc == 4) {
+		T1c1 = atoi(argv[1]);
+		T1c2 = atoi(argv[2]);
+		T1c3 = atoi(argv[3]);
+	}
+	else {
+		T1c1 = 32.0;
+		T1c2 = 32.0;
+		T1c3 = 32.0;
+	}
 
 	/* PRO code begins */
 
