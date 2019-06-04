@@ -1,6 +1,12 @@
 
 #include <PRO_util.h>
 #include <stdarg.h>
+#include <stdlib.h>
+#include <stdio.h>
+
+#define DEBUG 0
+#define debug_print(fmt, ...) \
+            do { if (DEBUG) fprintf(stderr, fmt, __VA_ARGS__); } while (0)
 
 void InitAlgorithmUtil(int numParams, ...) {
 	va_list valist;
@@ -30,11 +36,14 @@ int ShouldPROStopUtil() {
 	return proData->stop;
 }
 
-double GetReportingPointUtil(int index) {
-	return proData->reportingPoint.params[index];
+int GetReportingPointUtil(int index) {
+	int val = proData->reportingPoint.params[index];
+	debug_print("GetReportingPointUtil: val = %d\n", val);
+	return val;
 }
 
 void ReportTimeUtil(double t) {
+	debug_print("ReportTimeUtil: t = %f\n", t);
 	proData->reportingPoint.time = t;
 }
 

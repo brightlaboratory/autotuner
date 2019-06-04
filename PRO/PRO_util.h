@@ -8,7 +8,7 @@ struct PROData *proData;
 void InitAlgorithmUtil(int numParams, ...);
 void GetNewParameterValuesUtil();
 int ShouldPROStopUtil();
-double GetReportingPointUtil(int index);
+int GetReportingPointUtil(int index);
 void ReportTimeUtil(double t);
 void IncrementIterationsUtil();
 void PrintSummaryUtil();
