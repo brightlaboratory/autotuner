@@ -19,17 +19,10 @@ T3_init = 32
 
 numParams = 3
 PRO.InitAlgorithmUtil(numParams, T1_min, T1_max, T1_init, T2_min, T2_max, T2_init, T3_min, T3_max, T3_init)
-PRO.GetNewParameterValuesUtil()
-T1 = PRO.GetReportingPointUtil(0)
-T2 = PRO.GetReportingPointUtil(1)
-T3 = PRO.GetReportingPointUtil(2)
-
-print "T1: ", T1
-print "T2: ", T2
-print "T3: ", T3
 
 #Run the algorithm
 while PRO.ShouldPROStopUtil() == 0:
+	PRO.GetNewParameterValuesUtil()
 	T1 = PRO.GetReportingPointUtil(0)
 	T2 = PRO.GetReportingPointUtil(1)
 	T3 = PRO.GetReportingPointUtil(2)
